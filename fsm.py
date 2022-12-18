@@ -10,8 +10,8 @@ option = ''
 genre = ''
 actor = ''
 years = 0
-df = pd.read_csv('drama.csv')
-df_new = pd.read_csv('new_drama.csv')
+df = pd.read_csv('./drama.csv')
+df_new = pd.read_csv('./new_drama.csv')
 
 class TocMachine(GraphMachine):
 
@@ -127,15 +127,10 @@ class TocMachine(GraphMachine):
                 return True
         return False
 
-    # def on_enter_user(self, event):
-    #     if self.state=='final' or self.state=='coming_soon_drama' or self.state=='trivia':
-    #         text = '按下『推薦經典韓劇』會根據“類型”、“演員”、“發行年份”找出最適合你的韓劇🥳\n按下『即將上檔韓劇』了解更多即將開播的韓劇🤤\n按下『關於韓劇的冷知識』可以知道看了那麼多韓劇都沒發現的冷知識唷🥴\n！！！！！現在輸入『start』就準備進入韓劇小天地囉🥰！！！！！'
-    #         send_text_message(event.reply_token, text)
-
     def on_enter_menu(self, event):
         title = '韓劇小幫手😇'
         text = '根據上述的提示來操作唷~'
-        url = 'https://a.ksd-i.com/a/2020-06-03/127239-844836.jpg'
+        url = 'https://upload.wikimedia.org/wikipedia/commons/8/88/Start_%28кинотеатр%29.jpg'
         option1 = MessageTemplateAction(label = '推薦經典韓劇', text = '推薦經典韓劇')
         option2 = MessageTemplateAction(label = '即將上檔韓劇', text = '即將上檔韓劇')
         option3 = MessageTemplateAction(label = '關於韓劇的冷知識', text = '關於韓劇的冷知識')
@@ -161,31 +156,33 @@ class TocMachine(GraphMachine):
 
     def on_enter_coming_soon_drama(self, event):
         titles = []
+        texts = []
         image_links = []
         url_links = []
         for index, row in df_new.iterrows():
             print(index)
             print(row)
             titles.append(row['韓劇名稱'])
+            texts.append("⚡️首播：" + row['開播日期'] + "⚡️")
             image_links.append(row['圖片'])
             url_links.append(row['預告'])
-        send_carousel_message(event.reply_token, titles, image_links, url_links)
+        send_carousel_message(event.reply_token, titles, texts, image_links, url_links)
         self.go_back(event)
 
     def on_enter_trivia(self, event):
         text = '看韓劇教我們關於韓國的冷知識🥶😳\n'
         text += '1. 掛電話前不說掰掰📞\n在台灣掛電話之前一定會說一句「掰掰」、「再見」，要是沒說就是不禮貌。而韓國則是習慣用「語助詞」作為電話的結尾，對他們而言，反而說掰掰是件失禮的事。\n'
-        text += '2. 南男北女(남남북녀)\n是韓國一句俗諺語，大意是指：男人是南邊的更帥；女人則是北邊的最美。\n'
-        text += '3. 炸啤(치맥)\n炸雞跟啤酒的簡寫。因為來自星星的你所帶來的炸啤旋風\n'
+        text += '2. 南男北女(남남북녀)👨🏻‍🦰👩🏻‍🦰\n是韓國一句俗諺語，大意是指：男人是南邊的更帥；女人則是北邊的最美。\n'
+        text += '3. 炸啤(치맥)🍗🍻\n炸雞跟啤酒的簡寫。因為《來自星星的你》千頌伊所點燃了的全球炸啤炫風。\n'
         text += '4. 三溫暖的羊角頭巾♨️\n因為在溫度比較高的地方會流汗，容易導致身體處於黏糊糊的狀態，所以才會用毛巾把頭包成羊咩咩頭，汗就不會一直滴下來！\n'
         text += '5. 最長壽的韓劇👨🏻‍🦳\n1980播出的《田園日記》，竟一路播了22年，到了2002年才正式完結！'
         send_text_message(event.reply_token, text)
         self.go_back(event) #回到初始狀態
 
     def on_enter_fsm(self, event):
-        url = 'https://f2d6-2401-e180-8864-3610-d1c3-5bcc-b9e7-f60c.jp.ngrok.io/show-fsm'
-        # send_image_message(event.reply_token, 'https://a.ksd-i.com/a/2022-10-12/143841-955867.jpg')
+        url = 'https://img.onl/DFPsUM'
         send_image_message(event.reply_token, url)
+        self.go_back(event)
 
     def on_enter_option_actor(self, event): #決定要選演員或是不選演員
         text = '請選擇是否有想看的特定演員!\n按下『continue』挑選出演演員\n按下『skip』直接推薦給您韓劇'
@@ -214,13 +211,15 @@ class TocMachine(GraphMachine):
 
         #前面的state已經檢查過是否有包含這演員...->不需再檢查一次
         titles = []
+        texts = []
         image_links = []
         url_links = []
         recommend_drama = fit_drama.head(3) # 推薦前三部
         for index, row in recommend_drama.iterrows():
             titles.append(row['韓劇名稱'])
+            texts.append("出演演員：" + row['演員名稱'] + "\n發行年份：" + str(row['發行年份']))
             image_links.append(row['圖片'])
             url_links.append(row['預告'])
-        send_carousel_message(event.reply_token, titles, image_links, url_links)
+        send_carousel_message(event.reply_token, titles, texts, image_links, url_links)
         self.go_back(event) #回到初始狀態
         

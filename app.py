@@ -52,6 +52,7 @@ machine = TocMachine(
             'source': [
                 'coming_soon_drama',
                 'trivia',
+                'fsm',
                 'final',
             ],
             'dest': 'user'
@@ -109,7 +110,7 @@ def webhook_handler():
 
 
             if machine.state == 'user':
-                text = '按下『推薦經典韓劇』會根據“類型”、“演員”、“發行年份”找出最適合你的韓劇🥳\n按下『即將上檔韓劇』了解更多即將開播的韓劇🤤\n按下『關於韓劇的冷知識』可以知道看了那麼多韓劇都沒發現的冷知識🥴\n按下『FSM』可以得到當下的狀態圖唷😏！！！！！現在輸入『start』就準備進入韓劇小天地囉🥰！！！！！'
+                text = '按下『推薦經典韓劇』會根據“類型”、“演員”、“發行年份”找出最適合你的韓劇🥳\n按下『即將上檔韓劇』了解更多即將開播的韓劇🤤\n按下『關於韓劇的冷知識』可以知道看了那麼多韓劇都沒發現的冷知識🥴\n按下『FSM』可以得到狀態圖唷😏\n！！！！！現在輸入『start』就準備進入韓劇小天地囉🥰！！！！！'
                 send_text_message(event.reply_token, text)
             # if machine.state == 'final' or machine.state == 'coming_soon_drama' or machine.state == 'trivia':
             #     text = '按下『推薦經典韓劇』會根據“類型”、“演員”、“發行年份”找出最適合你的韓劇🥳\n按下『即將上檔韓劇』了解更多即將開播的韓劇🤤\n按下『關於韓劇的冷知識』可以知道看了那麼多韓劇都沒發現的冷知識唷🥴\n！！！！！現在輸入『start』就準備進入韓劇小天地囉🥰！！！！！'
