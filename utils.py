@@ -46,7 +46,7 @@ def send_carousel_message(reply_token, titles, texts, image_links, url_links):
     line_bot_api = LineBotApi(channel_access_token)
     cols = []
     for i, image_url in enumerate(image_links):
-        group = CarouselColumn(thumbnail_image_url=image_url, title=titles[i], text=texts[i], actions= [URIAction(label='點我預告片', uri=url_links[i])] )
+        group = CarouselColumn(thumbnail_image_url=image_url, title=titles[i], text=texts[i], actions= [URIAction(label='點我看預告片', uri=url_links[i])] )
         cols.append(group)
     message = TemplateSendMessage(alt_text='Carousel template', template=CarouselTemplate(columns=cols))
     line_bot_api.reply_message(reply_token, message)
