@@ -23,6 +23,8 @@ class TocMachine(GraphMachine):
         text = event.message.text
         if text == 'start':
             return True
+        elif text == 'restart':
+            return True
         return False
 
     def is_going_to_choose_genre(self, event): #走到choose_genre這個state時 要做的動作
