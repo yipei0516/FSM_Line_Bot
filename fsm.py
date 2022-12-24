@@ -124,7 +124,7 @@ class TocMachine(GraphMachine):
             return True
         elif text.lower().isnumeric(): #到最後輸入年份時
             years = int(text)
-            if years >=2020 and years <=2022:
+            if years >=2019 and years <=2022:
                 return True
         return False
 

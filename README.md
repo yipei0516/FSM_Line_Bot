@@ -1,4 +1,4 @@
-# 韓劇小教科書
+# 韓劇教科書
 > Linebot 實作
 > Due date: 2022/12/26 12pm
 
@@ -23,11 +23,11 @@
 ![](https://img.onl/cGYMt)
 ![](https://img.onl/UMKMUA)
 - 接著可以挑選是否要選擇出演演員
-    - 按下『continue』就是要選擇
+    - 按下『continue』就是要選擇想看的演員
     - 按下『skip』則是直接推薦韓劇
 ![](https://img.onl/cMyAYN)
 - 再來可以繼續挑選是否要選擇想看韓劇的發行年份(2020-2022)
-    - 按下『continue』就是要選擇
+    - 按下『continue』就是要選擇想看韓劇的發行年份
     - 按下『skip』則是直接推薦韓劇
 ![](https://img.onl/112GcB)
 - 最後就會選出三個符合你的要求，且最推薦給你的韓劇囉~
