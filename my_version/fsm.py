@@ -1,6 +1,5 @@
 from transitions.extensions import GraphMachine
 from utils import send_text_message, send_button_message, send_image_message, send_image_carousel_message, send_confirm_message, send_carousel_message
-import requests
 from linebot.models import MessageTemplateAction
 import pandas as pd
 
@@ -21,6 +20,8 @@ class TocMachine(GraphMachine):
     def is_going_to_menu(self, event):
         text = event.message.text
         if text == 'start':
+            return True
+        elif text == 'restart':
             return True
         return False
 
