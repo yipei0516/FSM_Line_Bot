@@ -1,4 +1,4 @@
-# 韓劇小天使
+# 韓劇小教科書
 > Linebot 實作
 > Due date: 2022/12/26 12pm
 
@@ -32,11 +32,11 @@
 ![](https://img.onl/112GcB)
 - 最後就會選出三個符合你的要求，且最推薦給你的韓劇囉~
     - 按下『點我看預告片』就可以看到推薦給你的韓劇的預告片囉
-![](https://img.onl/cjshMa)
+![](https://img.onl/RAeX90)
 
 ### 4. 即將上檔韓劇
 可以得知近期有哪些新劇即將開播，也能夠馬上看到預告片
-![](https://img.onl/X1fZf)
+![](https://img.onl/goTZDA)
 
 ### 5. 關於韓劇的冷知識
 可以得知一些看了很久韓劇都沒發現的冷知識
@@ -44,4 +44,4 @@
 
 ### 6. FSM
 可以得知整個Finite State Machine的狀態圖
-![](https://img.onl/DFPsUM)
+![](https://img.onl/u7dQEq)
