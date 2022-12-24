@@ -47,6 +47,12 @@ machine = TocMachine(
         {'trigger': 'advance', 'source': 'choose_actor', 'dest': 'choose_genre', 'conditions': 'is_going_to_choose_genre'}, #若找不到演員出演的韓劇有此類型
         
         {'trigger': 'advance', 'source': 'choose_years', 'dest': 'final', 'conditions': 'is_going_to_final'}, #直接推薦，不選年份
+        
+        {'trigger': 'advance', 'source': 'final', 'dest': 'menu', 'conditions': 'is_going_to_menu'},
+        {'trigger': 'advance', 'source': 'coming_soon_drama', 'dest': 'menu', 'conditions': 'is_going_to_menu'},
+        {'trigger': 'advance', 'source': 'trivia', 'dest': 'menu', 'conditions': 'is_going_to_menu'},
+        {'trigger': 'advance', 'source': 'fsm', 'dest': 'menu', 'conditions': 'is_going_to_menu'},
+
         {
             'trigger': 'go_back',
             'source': [
@@ -105,13 +111,16 @@ def webhook_handler():
         print(f'REQUEST BODY: \n{body}')
         response = machine.advance(event) # 從fsm.py的每個on_enter得來
         if response == False:
-            # send_text_message(event.reply_token, "請依照指示與按鈕來操作!")
             # send_text_message(event.reply_token, '歡迎來到韓劇小幫手\n推薦給你最好看最吸睛的韓劇❤️❤️❤️\n這邊可以根據『類型』、『演員』、『發行年份』找出最適合你的韓劇唷🥳\n輸入『start』就可以根據你的喜好挑選囉~')
-
 
             if machine.state == 'user':
                 text = '按下『推薦經典韓劇』會根據“類型”、“演員”、“發行年份”找出最適合你的韓劇🥳\n按下『即將上檔韓劇』了解更多即將開播的韓劇🤤\n按下『關於韓劇的冷知識』可以知道看了那麼多韓劇都沒發現的冷知識🥴\n按下『FSM』可以得到狀態圖唷😏\n！！！！！現在輸入『start』就準備進入韓劇小天地囉🥰！！！！！'
                 send_text_message(event.reply_token, text)
+            elif machine.state == 'final' or machine.state == 'coming_soon_drama' or machine.state == 'trivia' or machine.state == 'fsm':
+                text = '現在輸入『restart』可以重新回到主選單唷😇'
+                send_text_message(event.reply_token, text)
+            else:
+                send_text_message(event.reply_token, '請依照指示與按鈕來操作!')
             # if machine.state == 'final' or machine.state == 'coming_soon_drama' or machine.state == 'trivia':
             #     text = '按下『推薦經典韓劇』會根據“類型”、“演員”、“發行年份”找出最適合你的韓劇🥳\n按下『即將上檔韓劇』了解更多即將開播的韓劇🤤\n按下『關於韓劇的冷知識』可以知道看了那麼多韓劇都沒發現的冷知識唷🥴\n！！！！！現在輸入『start』就準備進入韓劇小天地囉🥰！！！！！'
             #     send_text_message(event.reply_token, text)

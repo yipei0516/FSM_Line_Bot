@@ -22,6 +22,8 @@ class TocMachine(GraphMachine):
         text = event.message.text
         if text == 'start':
             return True
+        elif text == 'restart':
+            return True
         return False
 
     def is_going_to_choose_genre(self, event): #走到choose_genre這個state時 要做的動作
@@ -166,7 +168,7 @@ class TocMachine(GraphMachine):
             image_links.append(row['圖片'])
             url_links.append(row['預告'])
         send_carousel_message(event.reply_token, titles, texts, image_links, url_links)
-        self.go_back(event)
+        # self.go_back(event)
 
     def on_enter_trivia(self, event):
         text = '看韓劇教我們關於韓國的冷知識🥶😳\n'
@@ -176,12 +178,12 @@ class TocMachine(GraphMachine):
         text += '4. 三溫暖的羊角頭巾♨️\n因為在溫度比較高的地方會流汗，容易導致身體處於黏糊糊的狀態，所以才會用毛巾把頭包成羊咩咩頭，汗就不會一直滴下來！\n'
         text += '5. 最長壽的韓劇👨🏻‍🦳\n1980播出的《田園日記》，竟一路播了22年，到了2002年才正式完結！'
         send_text_message(event.reply_token, text)
-        self.go_back(event) #回到初始狀態
+        # self.go_back(event) #回到初始狀態
 
     def on_enter_fsm(self, event):
-        url = 'https://img.onl/DFPsUM'
+        url = 'https://img.onl/kjiai2'
         send_image_message(event.reply_token, url)
-        self.go_back(event)
+        # self.go_back(event)
 
     def on_enter_option_actor(self, event): #決定要選演員或是不選演員
         text = '請選擇是否有想看的特定演員!\n按下『continue』挑選出演演員\n按下『skip』直接推薦給您韓劇'
@@ -220,5 +222,5 @@ class TocMachine(GraphMachine):
             image_links.append(row['圖片'])
             url_links.append(row['預告'])
         send_carousel_message(event.reply_token, titles, texts, image_links, url_links)
-        self.go_back(event) #回到初始狀態
+        # self.go_back(event) #回到初始狀態
         
