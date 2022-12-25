@@ -119,9 +119,6 @@ def webhook_handler():
             elif machine.state == 'final' or machine.state == 'coming_soon_drama' or machine.state == 'trivia' or machine.state == 'fsm':
                 text = '現在輸入『restart』可以重新回到主選單唷😇'
                 send_text_message(event.reply_token, text)
-            else:
-                send_text_message(event.reply_token, '請依照指示與按鈕來操作!')
-
     return 'OK'
 
 

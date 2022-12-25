@@ -5,7 +5,6 @@ from linebot.models import MessageTemplateAction
 import pandas as pd
 
 # global variable
-option = ''
 genre = ''
 actor = ''
 years = 0
@@ -73,8 +72,8 @@ class TocMachine(GraphMachine):
         elif text == '犯罪':
             genre = '犯罪'
             return True
-        elif text == '懸疑':
-            genre = '懸疑'
+        elif text == '日常':
+            genre = '日常'
             return True
         elif text == '奇幻':
             genre = '奇幻'
@@ -161,8 +160,6 @@ class TocMachine(GraphMachine):
         image_links = []
         url_links = []
         for index, row in df_new.iterrows():
-            print(index)
-            print(row)
             titles.append(row['韓劇名稱'])
             texts.append("⚡️首播：" + row['開播日期'] + "⚡️")
             image_links.append(row['圖片'])
@@ -222,5 +219,9 @@ class TocMachine(GraphMachine):
             image_links.append(row['圖片'])
             url_links.append(row['預告'])
         send_carousel_message(event.reply_token, titles, texts, image_links, url_links)
+        # reset
+        genre = ''
+        actor = ''
+        years = 0
         # self.go_back(event) #回到初始狀態
         

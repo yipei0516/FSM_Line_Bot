@@ -109,4 +109,5 @@ venv.bak/
 # vscode
 .vscode/
 
+# My file
 wiki.csv
