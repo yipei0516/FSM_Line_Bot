@@ -26,7 +26,7 @@
     - 按下『continue』就是要選擇想看的演員
     - 按下『skip』則是直接推薦韓劇
 ![](https://img.onl/cMyAYN)
-- 再來可以繼續挑選是否要選擇想看韓劇的發行年份(2020-2022)
+- 再來可以繼續挑選是否要選擇想看韓劇的發行年份(2019-2022)
     - 按下『continue』就是要選擇想看韓劇的發行年份
     - 按下『skip』則是直接推薦韓劇
 ![](https://img.onl/112GcB)
@@ -42,6 +42,17 @@
 可以得知一些看了很久韓劇都沒發現的冷知識
 ![](https://img.onl/zFEqH)
 
-### 6. FSM
-可以得知整個Finite State Machine的狀態圖
+## FSM結構圖
 ![](https://img.onl/u7dQEq)
+### 說明
+- user : 提示關於選單如何操作
+- menu : 提供選單按鈕選擇，選擇要進行的操作
+- choose_genre : 選擇想看的韓劇類型
+- coming_soon_drama : 顯示即將開播的韓劇清單
+- trivia : 顯示由韓劇衍生出來的冷知識
+- fsm : 顯示整個fsm的結構圖
+- option_actor : 挑選是否要選擇出演演員
+- choose_actor : 輸入想看的演員名稱
+- option_years : 挑選是否要選擇想看韓劇的發行年份
+- choose_years : 輸入想看韓劇的發行年份(2019~2022)
+- final : 顯示韓劇清單中推薦的韓劇前三名

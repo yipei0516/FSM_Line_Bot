@@ -1,7 +1,7 @@
 import os
 
 from linebot import LineBotApi, WebhookParser
-from linebot.models import MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage, ImageCarouselColumn, ImageCarouselTemplate, ConfirmTemplate, ButtonsTemplate, MessageTemplateAction, ImageSendMessage, URIAction, CarouselTemplate, CarouselColumn
+from linebot.models import MessageAction, TextMessage, TextSendMessage, TemplateSendMessage, ImageCarouselColumn, ImageCarouselTemplate, ConfirmTemplate, ButtonsTemplate, MessageTemplateAction, ImageSendMessage, URIAction, CarouselTemplate, CarouselColumn
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 
