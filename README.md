@@ -2,9 +2,11 @@
 > Linebot 實作
 > Due date: 2022/12/26 12pm
 
-![](https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_1.png)
-![](https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_2.png)
-![](https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_3.png)
+<p align="center">
+  <img src="https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_1.png" width="30%">
+  <img src="https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_2.png" width="30%">
+  <img src="https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_3.pngg" width="30%">
+</p>
 
 ## 創立主旨
 鄰近放假期間，大家會開始劇荒，包括我自己也是，所以想創建『韓劇教科書』這個Line Chat Bot讓大家看劇看到不喊停！
