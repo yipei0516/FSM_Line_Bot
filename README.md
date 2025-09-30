@@ -2,6 +2,10 @@
 > Linebot 實作
 > Due date: 2022/12/26 12pm
 
+![](https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_1.png)
+![](https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_2.png)
+![](https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_3.png)
+
 ## 創立主旨
 鄰近放假期間，大家會開始劇荒，包括我自己也是，所以想創建『韓劇教科書』這個Line Chat Bot讓大家看劇看到不喊停！
 能夠推薦過往的好看韓劇給你，也能夠讓你得知新上檔的韓劇情報，好康報不完🥳
@@ -42,8 +46,9 @@
 可以得知一些看了很久韓劇都沒發現的冷知識
 ![](https://img.onl/zFEqH)
 
-## FSM結構圖
-![](https://img.onl/u7dQEq)
+## FSM 結構圖
+![FSM][(https://img.onl/u7dQEq](https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/FSM.png))
+
 ### 說明
 - user : 提示關於選單如何操作
 - menu : 提供選單按鈕選擇，選擇要進行的操作
