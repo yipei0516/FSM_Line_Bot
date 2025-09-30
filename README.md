@@ -5,7 +5,7 @@
 <p align="center">
   <img src="https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_1.png" width="30%">
   <img src="https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_2.png" width="30%">
-  <img src="https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_3.pngg" width="30%">
+  <img src="https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/demo_3.png" width="30%">
 </p>
 
 ## 創立主旨
