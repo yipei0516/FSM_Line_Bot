@@ -49,7 +49,7 @@
 ![](https://img.onl/zFEqH)
 
 ## FSM 結構圖
-![FSM][(https://img.onl/u7dQEq](https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/FSM.png))
+![FSM](https://github.com/yipei0516/FSM_Line_Bot/blob/main/image/FSM.png)
 
 ### 說明
 - user : 提示關於選單如何操作
